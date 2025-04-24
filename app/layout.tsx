@@ -33,7 +33,7 @@ export default function RootLayout({
 }>) {
   return (
     <ClerkProvider>
-      <html lang="en">
+      <html lang="en" suppressHydrationWarning>
         <body className={`${poppins.variable} antialiased`}>
           <ThemeProvider
             attribute="class"
@@ -41,7 +41,7 @@ export default function RootLayout({
             enableSystem
             disableTransitionOnChange
           >
-            <nav className="bg-background p-4 text-foreground h-20 flex items-center justify-between">
+            <nav className="bg-background p-4 text-foreground h-20 flex items-center justify-between border-b">
               <Link
                 className="font-bold text-2xl flex gap-1 items-center"
                 href="/"
