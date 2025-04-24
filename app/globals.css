@@ -121,3 +121,8 @@
     font-family: var(--font-poppins);
   }
 }
+
+/* Custom CSS to change the username color */
+.cl-internal-1eekank {
+  color: var(--foreground); /* Use a CSS variable for theme color */
+}
