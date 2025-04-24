@@ -1,23 +1,24 @@
 "use client";
 
 import { UserButton } from "@clerk/nextjs";
-// import { ChartColumnBigIcon } from "lucide-react";
-// import { useRouter } from "next/navigation";
+import { ChartColumnBigIcon } from "lucide-react";
+import { useRouter } from "next/navigation";
 
 export default function UserDropdown() {
-  // const router = useRouter();
+  const router = useRouter();
+
   return (
     <span className="pr-4 flex">
       <UserButton showName>
-        {/* <UserButton.MenuItems>
-        <UserButton.Action
-          label="Dashboard"
-          labelIcon={<ChartColumnBigIcon size={16} />}
-          onClick={() => {
-            router.push("/dashboard");
-          }}
-        />
-      </UserButton.MenuItems> */}
+        <UserButton.MenuItems>
+          <UserButton.Action
+            label="Dashboard"
+            labelIcon={<ChartColumnBigIcon size={16} />}
+            onClick={() => {
+              router.push("/dashboard");
+            }}
+          />
+        </UserButton.MenuItems>
       </UserButton>
     </span>
   );
