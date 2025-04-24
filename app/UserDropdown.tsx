@@ -6,11 +6,10 @@ import { UserButton } from "@clerk/nextjs";
 
 export default function UserDropdown() {
   // const router = useRouter();
-  return ( 
-    <UserButton
-      showName
-    >
-      {/* <UserButton.MenuItems>
+  return (
+    <span className="pr-4 flex">
+      <UserButton showName>
+        {/* <UserButton.MenuItems>
         <UserButton.Action
           label="Dashboard"
           labelIcon={<ChartColumnBigIcon size={16} />}
@@ -19,6 +18,7 @@ export default function UserDropdown() {
           }}
         />
       </UserButton.MenuItems> */}
-    </UserButton>
+      </UserButton>
+    </span>
   );
 }
