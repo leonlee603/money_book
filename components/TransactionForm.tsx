@@ -102,7 +102,7 @@ export default function TransactionForm({
                       }}
                       value={field.value}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="w-full">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
@@ -128,7 +128,7 @@ export default function TransactionForm({
                       onValueChange={field.onChange}
                       value={field.value.toString()}
                     >
-                      <SelectTrigger>
+                      <SelectTrigger className="w-full">
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
