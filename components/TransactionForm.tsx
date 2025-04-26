@@ -25,7 +25,7 @@ import { cn } from "@/lib/utils";
 import { CalendarIcon } from "lucide-react";
 import { Calendar } from "./ui/calendar";
 import { Input } from "./ui/input";
-// import { type Category } from "@/types/Category";
+import { type Category } from "@/types/Category";
 
 // Create the form schema
 export const transactionFormSchema = z.object({
@@ -42,7 +42,7 @@ export const transactionFormSchema = z.object({
 });
 
 type Props = {
-  // categories: Category[];
+  categories: Category[];
   // onSubmit: (data: z.infer<typeof transactionFormSchema>) => Promise<void>;
   defaultValues?: {
     transactionType: "income" | "expense";
@@ -54,7 +54,7 @@ type Props = {
 };
 
 export default function TransactionForm({
-  // categories,
+  categories,
   // onSubmit,
   defaultValues,
 }: Props) {
@@ -71,13 +71,14 @@ export default function TransactionForm({
     },
   });
 
-  // const transactionType = form.watch("transactionType");
-  // const filteredCategories = categories.filter(
-  //   (category) => category.type === transactionType
-  // );
+  const transactionType = form.watch("transactionType");
+  const filteredCategories = categories.filter(
+    (category) => category.type === transactionType
+  );
 
-  function onSubmit() {
-    return;
+  async function onSubmit(data: z.infer<typeof transactionFormSchema>) {
+    console.log(data)
+    // return;
   }
 
   return (
@@ -132,14 +133,14 @@ export default function TransactionForm({
                         <SelectValue />
                       </SelectTrigger>
                       <SelectContent>
-                        {/* {filteredCategories.map((category) => (
+                        {filteredCategories.map((category) => (
                           <SelectItem
                             key={category.id}
                             value={category.id.toString()}
                           >
                             {category.name}
                           </SelectItem>
-                        ))} */}
+                        ))}
                       </SelectContent>
                     </Select>
                   </FormControl>
@@ -199,7 +200,7 @@ export default function TransactionForm({
                 <FormItem>
                   <FormLabel>Amount</FormLabel>
                   <FormControl>
-                    <Input {...field} type="number" />
+                    <Input {...field} type="number" min={0}/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>

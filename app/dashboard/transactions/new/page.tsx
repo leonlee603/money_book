@@ -1,3 +1,4 @@
+import Link from "next/link";
 import TransactionForm from "@/components/TransactionForm";
 import {
   Breadcrumb,
@@ -8,9 +9,12 @@ import {
   BreadcrumbSeparator,
 } from "@/components/ui/breadcrumb";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
-import Link from "next/link";
+import { getCategories } from "@/data/getCategories";
 
 export default async function NewTransactionPage() {
+  const categories = await getCategories();
+  console.log({ categories });
+
   return (
     <div className="max-w-screen-xl mx-auto py-10">
       <Breadcrumb>
@@ -36,7 +40,7 @@ export default async function NewTransactionPage() {
         <CardHeader>
           <CardTitle className="text-xl">New Transaction</CardTitle>
         </CardHeader>
-        <CardContent><TransactionForm /></CardContent>
+        <CardContent><TransactionForm categories={categories}/></CardContent>
       </Card>
     </div>
   );
