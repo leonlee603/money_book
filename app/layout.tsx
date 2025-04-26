@@ -14,6 +14,7 @@ import { PiggyBank } from "lucide-react";
 import UserDropdown from "./UserDropdown";
 import "./globals.css";
 import { ModeToggle } from "@/components/ModeToggle";
+import { Toaster } from "@/components/ui/sonner"
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -67,6 +68,7 @@ export default function RootLayout({
               </div>
             </nav>
             {children}
+            <Toaster />
           </ThemeProvider>
         </body>
       </html>

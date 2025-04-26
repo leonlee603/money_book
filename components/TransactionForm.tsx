@@ -43,7 +43,7 @@ export const transactionFormSchema = z.object({
 
 type Props = {
   categories: Category[];
-  // onSubmit: (data: z.infer<typeof transactionFormSchema>) => Promise<void>;
+  onSubmit: (data: z.infer<typeof transactionFormSchema>) => Promise<void>;
   defaultValues?: {
     transactionType: "income" | "expense";
     categoryId: number;
@@ -55,7 +55,7 @@ type Props = {
 
 export default function TransactionForm({
   categories,
-  // onSubmit,
+  onSubmit,
   defaultValues,
 }: Props) {
   // Initialize form instance with useForm and zodResolver.
@@ -75,11 +75,6 @@ export default function TransactionForm({
   const filteredCategories = categories.filter(
     (category) => category.type === transactionType
   );
-
-  async function onSubmit(data: z.infer<typeof transactionFormSchema>) {
-    console.log(data)
-    // return;
-  }
 
   return (
     <Form {...form}>
