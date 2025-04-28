@@ -195,7 +195,7 @@ export default function TransactionForm({
                 <FormItem>
                   <FormLabel>Amount</FormLabel>
                   <FormControl>
-                    <Input {...field} type="number" min={0}/>
+                    <Input {...field} type="number" min={0} step="any"/>
                   </FormControl>
                   <FormMessage />
                 </FormItem>
