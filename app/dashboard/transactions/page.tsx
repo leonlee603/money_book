@@ -27,6 +27,7 @@ import { Badge } from "@/components/ui/badge";
 import Filters from "./Filters";
 import { getTransactionsByMonth } from "@/data/getTransactionsByMonth";
 import { getTransactionYearsRange } from "@/data/getTransactionYearsRange";
+import DeleteTransactionDialog from "../../../data/DeleteTransactionDialog";
 
 // Schema for validating search params and set default value.
 const today = new Date();
@@ -127,18 +128,24 @@ export default async function TransactionsPage({
                       ${numeral(transaction.amount).format("0,0[.]00")}
                     </TableCell>
                     <TableCell className="text-right">
-                      <Button
-                        variant="outline"
-                        asChild
-                        size="icon"
-                        aria-label="Edit transaction"
-                      >
-                        <Link
-                          href={`/dashboard/transactions/${transaction.id}`}
+                      <div className="flex gap-2 justify-end">
+                        <Button
+                          variant="outline"
+                          asChild
+                          size="icon"
+                          aria-label="Edit transaction"
                         >
-                          <PencilIcon />
-                        </Link>
-                      </Button>
+                          <Link
+                            href={`/dashboard/transactions/${transaction.id}`}
+                          >
+                            <PencilIcon />
+                          </Link>
+                        </Button>
+                        <DeleteTransactionDialog
+                          transactionId={transaction.id}
+                          transactionDate={transaction.transactionDate}
+                        />
+                      </div>
                     </TableCell>
                   </TableRow>
                 ))}

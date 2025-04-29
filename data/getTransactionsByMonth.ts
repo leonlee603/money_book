@@ -42,7 +42,10 @@ export async function getTransactionsByMonth({
         lte(transactionsTable.transactionDate, format(latestDate, "yyyy-MM-dd"))
       )
     )
-    .orderBy(desc(transactionsTable.transactionDate))
+    .orderBy(
+      desc(transactionsTable.transactionDate),
+      desc(transactionsTable.id)
+    )
     // Combine the data from 2 tables.
     .leftJoin(
       categoriesTable,
