@@ -5,7 +5,7 @@ import { getCategories } from "@/data/getCategories";
 import { getTransactionById } from "@/data/getTransactionById";
 
 import EditTransactionForm from "./EditTransactionForm";
-import DeleteTransactionDialog from "../../../../data/DeleteTransactionDialog";
+import DeleteTransactionDialog from "../../../../components/DeleteTransactionDialog";
 
 export default async function EditTransactionPage({
   params,

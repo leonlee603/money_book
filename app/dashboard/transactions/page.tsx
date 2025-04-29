@@ -27,7 +27,7 @@ import { Badge } from "@/components/ui/badge";
 import Filters from "./Filters";
 import { getTransactionsByMonth } from "@/data/getTransactionsByMonth";
 import { getTransactionYearsRange } from "@/data/getTransactionYearsRange";
-import DeleteTransactionDialog from "../../../data/DeleteTransactionDialog";
+import DeleteTransactionDialog from "../../../components/DeleteTransactionDialog";
 
 // Schema for validating search params and set default value.
 const today = new Date();
