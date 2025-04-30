@@ -14,7 +14,7 @@ import { PiggyBank } from "lucide-react";
 import UserDropdown from "./UserDropdown";
 import "./globals.css";
 import { ModeToggle } from "@/components/ModeToggle";
-import { Toaster } from "@/components/ui/sonner"
+import { Toaster } from "@/components/ui/sonner";
 
 const poppins = Poppins({
   weight: ["100", "200", "300", "400", "500", "600", "700", "800", "900"],
@@ -50,13 +50,13 @@ export default function RootLayout({
                 <PiggyBank />
                 Money Book
               </Link>
-              <div className="flex ">
+              <div className="flex gap-2">
                 <SignedOut>
-                  <div className="flex items-center">
-                    <Button asChild variant="link" className="text-foreground">
+                  <div className="flex  gap-2 items-center">
+                    <Button asChild>
                       <SignInButton />
                     </Button>
-                    <Button asChild variant="link" className="text-foreground">
+                    <Button asChild variant="outline">
                       <SignUpButton />
                     </Button>
                   </div>
