@@ -38,7 +38,7 @@ export default function NewTransactionForm({
       }&year=${data.transactionDate.getFullYear()}`
     );
 
-    console.log(result.id);
+    // console.log(result.id);
   };
   return <TransactionForm onSubmit={handleSubmit} categories={categories} />;
 }
