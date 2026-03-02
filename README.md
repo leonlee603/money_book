@@ -1,6 +1,6 @@
 ## Introduction
 
-This is a project for me to practice performing CRUD by server actions.
+This is a small project to practice performing CRUD by server actions.
 
 ## Stacks
 
